@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int gm[30];
+
+int main()
+{
+    int t;
+    int n,p,q;
+    cin>>t;
+    int j=0;
+    while(j<t)
+    {
+        cin>>n>>p>>q; 
+        for(int i=0;i<n;i++)
+           cin>>gm[i];
+        sort(gm,gm+n);
+        int cnt=0,gms=0,i=0;
+        //1 2 3
+        while(gms+gm[i]<=q&&cnt+1<=p&&i<n) 
+        {
+            gms+=gm[i];
+            cnt++;
+            i++;
+        }
+        cout<<"Case "<<j+1<<": "<<cnt<<endl;
+        j++;
+    }
+}
