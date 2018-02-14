@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int heads[20000];
+int sol[20000];
+
+int main()
+{
+    int d,s;
+
+    while(cin>>d>>s&&s&&d)
+    {
+        int coins=0;
+        for(int i=0;i<d;i++)
+            cin>>heads[i];
+
+        for(int i=0;i<s;i++)
+            cin>>sol[i];
+        if(s<d) cout<<"Loowater is doomed!"<<endl;
+        else{
+            int cnt=0;
+            sort(sol,sol+s);
+            sort(heads,heads+d);
+            for(int i=0;i<s;i++)
+            {
+                if(cnt==d)
+                    break;
+                if(sol[i]>=heads[cnt])
+                {
+                    coins+=sol[i];
+                    cnt++;
+                }
+            }
+            if(cnt==d)
+                cout<<coins<<endl;
+            else
+                cout<<"Loowater is doomed!"<<endl;
+    }
+
+    }
+
+}
