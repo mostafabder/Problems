@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string s,t;
+    while(cin>>s>>t)
+    {
+        int cnt=0;
+    for(int i=0;i<t.size();i++)
+    {
+        if(cnt==s.size())break;
+        if(t[i]==s[cnt])
+            cnt++;
+    }
+    if(cnt==s.size())cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
+    }
+}
