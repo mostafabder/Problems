@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,j=0;
+    cin>>t;
+    while(j<t)
+    {
+        int n,cnt=0;
+        string s;
+        cin>>n>>s;
+        for(int i=1;i<=s.size();i++)
+        {
+            if(s[i-1]=='.')
+            {
+                cnt++;
+                i+=2;
+            }
+        }
+        cout << "Case " << j+1 << ": " << cnt << endl;
+        j++;
+    }
+}
